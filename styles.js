@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Icon } from "native-base";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
@@ -51,7 +52,7 @@ export const ProductWrapper = styled.View`
   }
 `;
 
-export const ShopItemStyled = styled.Text`
+export const ItemStyled = styled.Text`
   color: red;
   font-size: 18px;
   margin-top: 10px;
@@ -69,16 +70,32 @@ export const ProductItemStyled = styled.Text`
   width: 100%;
 `;
 
-export const ShopDetailWrapper = styled.View`
+export const DetailWrapper = styled.View`
   margin-top: 50px;
 `;
 
-export const ShopDetailImage = styled.Image`
+export const DetailImage = styled.Image`
   width: 150px;
   height: 150px;
 `;
 
-export const ShopDetailTitle = styled.Text`
+export const DetailTitle = styled.Text`
   font-weight: bold;
   font-size: 40px;
+`;
+export const DetailText = styled.Text`
+  font-weight: bold;
+  font-size: 20px;
+`;
+
+// export const TotalPrice = styled.Text`
+//   color: "#ff0000";
+//   font-size: 15px;
+//   font-weight: bold;
+//   margin-left: 10px;
+// `;
+
+export const CartButtonStyled = styled(Icon)`
+  color: black;
+  margin-right: 10px;
 `;

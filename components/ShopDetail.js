@@ -3,12 +3,11 @@ import { useSelector } from "react-redux";
 import { Content, Spinner } from "native-base";
 import ProductList from "./ProductList";
 
-import { ShopDetailTitle, ShopDetailImage, ShopDetailWrapper } from "../styles";
-const ShopDetail = ({ navigation, route }) => {
+import { DetailTitle, DetailImage, DetailWrapper } from "../styles";
+const ShopDetail = ({ route, navigation }) => {
   // const loading = useSelector((state) => state.shops.loading);
   //from the route not reducer
   const { shop } = route.params;
-  // const shop = useSelector((state) => state.shopReducer.shops[0]);
   const products = useSelector((state) => state.productReducer.products);
 
   // if (loading) return <Spinner />;
@@ -19,11 +18,11 @@ const ShopDetail = ({ navigation, route }) => {
 
   return (
     <Content>
-      <ShopDetailWrapper>
-        <ShopDetailImage source={{ uri: shop.image }} />
-        <ShopDetailTitle>{shop.name}</ShopDetailTitle>
-      </ShopDetailWrapper>
-      <ProductList products={productsFromStore} />
+      <DetailWrapper>
+        <DetailImage source={{ uri: shop.image }} />
+        <DetailTitle>{shop.name}</DetailTitle>
+        <ProductList products={productsFromStore} navigation={navigation} />
+      </DetailWrapper>
     </Content>
   );
 };
