@@ -14,8 +14,8 @@ const RootNavigator = () => {
     <>
       {/* name of screen */}
       <Navigator
-        initialRouteName="CartList"
-        // initialRouteName="Home"
+        // initialRouteName="CartList"
+        initialRouteName="Home"
         screenOptions={{
           headerTintColor: "white",
           headerStyle: {

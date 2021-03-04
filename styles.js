@@ -99,3 +99,26 @@ export const CartButtonStyled = styled(Icon)`
   color: black;
   margin-right: 10px;
 `;
+export const DeleteIcon = styled(Icon)`
+  color: #ff0000;
+  margin-right: 10px;
+`;
+
+export const CartTextStyled = styled.Text`
+  color: #ff0000;
+  font-size: 20px;
+`;
+
+export const CheckoutButton = styled.TouchableOpacity`
+  align-self: stretch;
+  align-items: center;
+  padding: 20px;
+  background-color: #ff0000;
+  margin-top: 30px;
+`;
+
+export const CheckoutButtonText = styled.Text`
+  color: #fcfdff;
+  font-weight: bold;
+  font-size: 18px;
+`;

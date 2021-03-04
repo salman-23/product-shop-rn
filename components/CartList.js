@@ -3,9 +3,15 @@ import { StyleSheet, Text, View } from "react-native";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import { List, Content, Spinner } from "native-base";
+import { checkout } from "../store/actions/cartActions";
+import { useDispatch } from "react-redux";
+import { CheckoutButton, CheckoutButtonText } from "../styles";
+
 const CartList = ({ navigation }) => {
   const items = useSelector((state) => state.cartReducer.items);
   const products = useSelector((state) => state.productReducer.products);
+  const dispatch = useDispatch();
+
   // const loading = useSelector((state) => state.productReducer.loading);
   // Loading before you map
   // if (loading ) return <Spinner/>
@@ -22,10 +28,15 @@ const CartList = ({ navigation }) => {
         quantity={product.quantity}
       />
     ));
-
+  if (cartList.length === 0) {
+    return <Text>You cart is empty add items to checkout</Text>;
+  }
   return (
     <Content>
       <List>{cartList}</List>
+      <CheckoutButton onPress={() => dispatch(checkout())}>
+        <CheckoutButtonText>Checkout</CheckoutButtonText>
+      </CheckoutButton>
     </Content>
   );
 };

@@ -7,15 +7,7 @@ import { DetailTitle, DetailImage, DetailWrapper, DetailText } from "../styles";
 const ProductDetail = ({ route }) => {
   const { product } = route.params;
   // const loading = useSelector((state) => state.products.loading);
-  //from the route not reducer
-  // const product = useSelector((state) => state.productReducer.products[0]);
-  // const products = useSelector((state) => state.productReducer.products);
-
   // if (loading) return <Spinner />;
-
-  // const productsFromStore = product.products.map((product) =>
-  //   products.find((_product) => product.id === _product.id)
-  // );
 
   return (
     <Content>
