@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Image } from "react-native";
-import { ListItem, Text, Right, Left, Body, Button, Icon } from "native-base";
+import { ListItem, Text, Right, Left, Body, Button } from "native-base";
 
-import { ItemStyled, TotalPrice, DeleteIcon } from "../styles";
+import {
+  ItemStyled,
+  TotalPrice,
+  DeleteIcon,
+  ProductTextStyled,
+} from "../styles";
 import { useDispatch } from "react-redux";
 import { removeItemFromCart } from "../store/actions/cartActions";
 
@@ -13,16 +18,18 @@ const CartItem = ({ product, quantity }) => {
     <ListItem>
       <Body>
         <ItemStyled>
-          <Text>{product.name} </Text>
-          <Text>{product.price} KD</Text>
-          <Text> quantity: {quantity} </Text>
-          <Text>total price: {product.price * product.quantity} KD </Text>
+          <ProductTextStyled>{product.name} </ProductTextStyled>
+          <ProductTextStyled>{product.price} KD</ProductTextStyled>
+          <ProductTextStyled> quantity: {quantity} </ProductTextStyled>
+          <ProductTextStyled>
+            total price: {product.price * product.quantity} KD{" "}
+          </ProductTextStyled>
         </ItemStyled>
       </Body>
       <Right>
         <DeleteIcon
-          name="Feather"
-          type="delete"
+          name="delete"
+          type="MaterialIcons"
           onPress={() => dispatch(removeItemFromCart(product.id))}
         />
       </Right>

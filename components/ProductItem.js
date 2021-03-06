@@ -6,10 +6,10 @@ import { useDispatch } from "react-redux";
 
 import { addItemToCart } from "../store/actions/cartActions";
 
-import { TopStyling, Title, ItemStyled } from "../styles";
+import { TopStyling, ProductTextStyled, ItemStyled, AddIcon } from "../styles";
 const ProductItem = ({ product, navigation }) => {
-  const [quantity, setQuantity] = useState(0);
   const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(0);
 
   //data in reduer how it looks like ?
   const handleAdd = () => {
@@ -24,8 +24,12 @@ const ProductItem = ({ product, navigation }) => {
         source={{ uri: product.image }}
       />
       <Left>
-        <ItemStyled>{product.name}</ItemStyled>
-        <ItemStyled>{product.price}</ItemStyled>
+        {/* <TopStyling> */}
+        <ItemStyled>
+          {product.name}
+          <ProductTextStyled> price:</ProductTextStyled> {product.price}
+        </ItemStyled>
+        {/* </TopStyling> */}
       </Left>
       <NumericInput
         rounded
@@ -40,9 +44,9 @@ const ProductItem = ({ product, navigation }) => {
         iconSize={25}
         iconStyle={{ color: "white" }}
       />
-      <Icon type="Fontisto" name="shopping-basket-add" onPress={handleAdd}>
-        <Text>Add</Text>
-      </Icon>
+      <AddIcon type="Fontisto" name="shopping-basket-add" onPress={handleAdd}>
+        {/* <Text>Add</Text> */}
+      </AddIcon>
     </ListItem>
   );
 };

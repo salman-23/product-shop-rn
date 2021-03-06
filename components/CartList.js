@@ -3,18 +3,18 @@ import { StyleSheet, Text, View } from "react-native";
 import { useSelector } from "react-redux";
 import CartItem from "./CartItem";
 import { List, Content, Spinner } from "native-base";
-import { checkout } from "../store/actions/cartActions";
+// import { checkout } from "../store/actions/cartActions";
 import { useDispatch } from "react-redux";
-import { CheckoutButton, CheckoutButtonText } from "../styles";
+import CheckoutButton from "./buttons/CheckoutButton";
 
-const CartList = ({ navigation }) => {
+const CartList = () => {
   const items = useSelector((state) => state.cartReducer.items);
   const products = useSelector((state) => state.productReducer.products);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // const loading = useSelector((state) => state.productReducer.loading);
   // Loading before you map
-  // if (loading ) return <Spinner/>
+  // if (loading) return <Spinner />;
 
   const cartList = items
     .map((item) => ({
@@ -33,10 +33,10 @@ const CartList = ({ navigation }) => {
   }
   return (
     <Content>
-      <List>{cartList}</List>
-      <CheckoutButton onPress={() => dispatch(checkout())}>
-        <CheckoutButtonText>Checkout</CheckoutButtonText>
-      </CheckoutButton>
+      <List>
+        {cartList}
+        <CheckoutButton />
+      </List>
     </Content>
   );
 };

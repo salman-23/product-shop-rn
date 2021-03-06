@@ -10,7 +10,6 @@ const ShopList = ({ navigation }) => {
   const shops = useSelector((state) => state.shopReducer.shops);
 
   // if (loading) return <Spinner />;
-  //need checking!
   const shopList = shops.map((shop) => (
     <ShopItem key={shop.id} shop={shop} navigation={navigation} />
   ));

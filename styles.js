@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Icon } from "native-base";
+import { TextInput, TouchableOpacity } from "react-native";
 
 export const HomeBackground = styled.ImageBackground`
   flex: 1;
@@ -14,7 +15,7 @@ export const TopStyling = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: #000;
+  color: #fff;
   font-size: 38px;
   text-align: center;
 `;
@@ -47,13 +48,13 @@ export const ProductWrapper = styled.View`
     text-align: center;
 
     &.product-price {
-      color: red;
+      color: #2596be;
     }
   }
 `;
 
 export const ItemStyled = styled.Text`
-  color: red;
+  color: #2596be;
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -62,7 +63,7 @@ export const ItemStyled = styled.Text`
 `;
 
 export const ProductItemStyled = styled.Text`
-  color: red;
+  color: #2596be;
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -82,6 +83,7 @@ export const DetailImage = styled.Image`
 export const DetailTitle = styled.Text`
   font-weight: bold;
   font-size: 40px;
+  color: #2596be;
 `;
 export const DetailText = styled.Text`
   font-weight: bold;
@@ -89,31 +91,42 @@ export const DetailText = styled.Text`
 `;
 
 // export const TotalPrice = styled.Text`
-//   color: "#ff0000";
+//   color: #ff0000;
 //   font-size: 15px;
 //   font-weight: bold;
 //   margin-left: 10px;
 // `;
 
 export const CartButtonStyled = styled(Icon)`
-  color: black;
+  color: #2596be;
+
+  margin-right: 10px;
+`;
+export const AddIcon = styled(Icon)`
+  color: #2596be;
   margin-right: 10px;
 `;
 export const DeleteIcon = styled(Icon)`
-  color: #ff0000;
+  color: #2596be;
   margin-right: 10px;
 `;
 
 export const CartTextStyled = styled.Text`
-  color: #ff0000;
+  color: #2596be;
   font-size: 20px;
 `;
 
-export const CheckoutButton = styled.TouchableOpacity`
+export const ProductTextStyled = styled.Text`
+  color: #2596be;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+export const CheckoutButtonStyled = styled.TouchableOpacity`
   align-self: stretch;
   align-items: center;
   padding: 20px;
-  background-color: #ff0000;
+  background-color: #2596be;
   margin-top: 30px;
 `;
 
@@ -121,4 +134,50 @@ export const CheckoutButtonText = styled.Text`
   color: #fcfdff;
   font-weight: bold;
   font-size: 18px;
+`;
+
+export const AuthContainer = styled.View`
+  flex: 1;
+  align-self: stretch;
+  justify-content: center;
+  align-items: center;
+  background-color: #2596be;
+  padding-right: 60px;
+  padding-left: 60px;
+`;
+
+export const AuthTitle = styled.Text`
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom-color: #2699fa;
+`;
+
+export const AuthTextInput = styled.TextInput`
+  align-self: stretch;
+  text-align: left;
+  height: 40px;
+  margin-bottom: 30px;
+  color: #fff;
+  border-bottom-color: #fff;
+  border-bottom-width: 1px;
+`;
+
+export const AuthButton = styled.TouchableOpacity`
+  align-self: stretch;
+  align-items: center;
+  padding: 20px;
+  background-color: #fcfdff;
+  margin-top: 30px;
+`;
+
+export const AuthButtonText = styled.Text`
+  color: #2596be;
+  font-weight: bold;
+  font-size: 18px;
+`;
+
+export const AuthOther = styled.Text`
+  color: #fcfdff;
+  margin-top: 15px;
 `;
